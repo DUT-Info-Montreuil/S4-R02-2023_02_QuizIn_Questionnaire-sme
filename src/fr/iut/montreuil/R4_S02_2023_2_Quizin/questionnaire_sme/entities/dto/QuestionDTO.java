@@ -1,4 +1,19 @@
 package fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.entities.dto;
 
+import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.entities.bo.FichierQuestionnaireBO;
+
 public class QuestionDTO {
+    private FichierQuestionnaireBO FQBO;
+
+    public FichierQuestionnaireBO getFQBO() {
+        return FQBO;
+    }
+
+    public void setFQBO(FichierQuestionnaireBO FQBO) {
+        this.FQBO = FQBO;
+    }
+
+    public QuestionDTO(FichierQuestionnaireBO FQBO) {
+        this.FQBO = FQBO;
+    }
 }
