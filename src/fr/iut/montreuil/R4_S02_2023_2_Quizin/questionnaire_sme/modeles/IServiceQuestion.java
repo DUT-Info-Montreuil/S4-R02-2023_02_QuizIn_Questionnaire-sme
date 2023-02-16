@@ -11,7 +11,7 @@ public interface IServiceQuestion {
     public QuestionnaireDTO chargerListeQuestion(File fichier);
     public QuestionnaireDTO fournirListeQuestionnaires();
     public QuestionnaireDTO fournirUnQuestionnaires();
-    public void majStatQuestions(QuestionnaireDTO);
+    public void majStatQuestions(QuestionnaireDTO q );
     public QuestionDTO fournirStatQuestions();
 
 

@@ -23,9 +23,11 @@ public class ServiceQuestionnaireImpl implements IServiceQuestion {
     }
 
     @Override
-    public void majStatQuestions() {
+    public void majStatQuestions(QuestionnaireDTO q) {
 
     }
+
+
 
     @Override
     public QuestionDTO fournirStatQuestions() {
