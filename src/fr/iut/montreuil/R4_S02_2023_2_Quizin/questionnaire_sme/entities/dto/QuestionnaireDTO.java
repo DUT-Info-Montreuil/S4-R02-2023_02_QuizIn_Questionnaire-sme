@@ -15,4 +15,11 @@ public class QuestionnaireDTO {
     public QuestionnaireDTO(QuestionDTO question) {
         this.question = question;
     }
+
+    @Override
+    public String toString() {
+        return "QuestionnaireDTO{" +
+                "question=" + question +
+                '}';
+    }
 }

@@ -96,4 +96,19 @@ public class QuestionDTO {
     public void setRéférence(String référence) {
         Référence = référence;
     }
+
+    @Override
+    public String toString() {
+        return "QuestionDTO{" +
+                "FQBO=" + FQBO +
+                ", idQuestionnaire=" + idQuestionnaire +
+                ", num_questionnaire=" + num_questionnaire +
+                ", Langue='" + Langue + '\'' +
+                ", Libellé='" + Libellé + '\'' +
+                ", Réponse='" + Réponse + '\'' +
+                ", Difficulté=" + Difficulté +
+                ", Explication='" + Explication + '\'' +
+                ", Référence='" + Référence + '\'' +
+                '}';
+    }
 }
