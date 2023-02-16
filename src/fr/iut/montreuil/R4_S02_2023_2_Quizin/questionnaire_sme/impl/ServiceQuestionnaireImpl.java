@@ -25,24 +25,29 @@ public class ServiceQuestionnaireImpl implements IServiceQuestion {
             System.out.println(e);
         }
         System.out.println("csv read complete");
+    return
+    }
+
+    @Override
+    public QuestionnaireDTO chargerListeQuestion(File fichier) {
+        return null;
+    }
+
+    @Override
+    public QuestionnaireDTO fournirListeQuestionnaires() {
+        return null;
+    }
+
+    @Override
+    public void majStatQuestions(QuestionnaireDTO q) {
+
+    }
+
+    @Override
+    public QuestionDTO fournirStatQuestions() {
+        return null;
     }
 }
 
 
-//    @Override
-//    public QuestionnaireDTO fournirListeQuestionnaires() {
-//        return null;
-//    }
-//
-//
-//    @Override
-//    public void majStatQuestions(QuestionnaireDTO q) {
-//
-//    }
-//
-//
-//    @Override
-//    public QuestionDTO fournirStatQuestions() {
-//        return null;
-//    }
-}
+
