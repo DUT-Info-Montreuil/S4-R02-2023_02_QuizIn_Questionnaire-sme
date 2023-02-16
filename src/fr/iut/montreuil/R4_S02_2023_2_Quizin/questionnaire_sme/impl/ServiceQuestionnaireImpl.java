@@ -28,7 +28,6 @@ public class ServiceQuestionnaireImpl implements IServiceQuestion {
     }
 
 
-
     @Override
     public QuestionDTO fournirStatQuestions() {
         return null;
