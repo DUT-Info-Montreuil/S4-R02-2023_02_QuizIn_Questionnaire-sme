@@ -9,13 +9,9 @@ import java.util.Arrays;
 public class testDesMethodes {
 
     public static void main(String[] args) {
-        chargerListeQuestion();
-    }
-
-    public static void chargerListeQuestion() {
         try {
 
-            CSVReader reader = new CSVReader(new FileReader("questionsQuizz_V1.1.csv"));
+            CSVReader reader = new CSVReader(new FileReader("src/fr/iut/montreuil/R4_S02_2023_2_Quizin/questionnaire_sme/ressources/questionsQuizz_V1.1.csv"));
             String[] nextline;
             while ((nextline = reader.readNext()) != null) {
                 if (nextline != null) {
@@ -28,3 +24,6 @@ public class testDesMethodes {
         System.out.println("csv read complete");
     }
 }
+
+
+

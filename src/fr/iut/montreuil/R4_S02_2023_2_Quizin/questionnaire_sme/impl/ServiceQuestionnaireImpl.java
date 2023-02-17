@@ -11,7 +11,7 @@ import java.util.Arrays;
 
 public class ServiceQuestionnaireImpl implements IServiceQuestion {
 
-    public QuestionnaireDTO chargerListeQuestion(String nomFichier) {
+    public /*!!!!!!!!A CHANGER!!!!!!!*/void chargerListeQuestion(String nomFichier) {
         try {
 
             CSVReader reader = new CSVReader(new FileReader("questionsQuizz_V1.1.csv"));
@@ -25,7 +25,7 @@ public class ServiceQuestionnaireImpl implements IServiceQuestion {
             System.out.println(e);
         }
         System.out.println("csv read complete");
-    return
+
     }
 
     @Override
@@ -40,7 +40,6 @@ public class ServiceQuestionnaireImpl implements IServiceQuestion {
 
     @Override
     public void majStatQuestions(QuestionnaireDTO q) {
-
     }
 
     @Override
