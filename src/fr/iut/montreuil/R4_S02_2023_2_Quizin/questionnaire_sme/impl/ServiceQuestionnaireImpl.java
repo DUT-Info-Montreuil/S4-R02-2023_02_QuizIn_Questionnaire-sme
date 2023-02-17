@@ -11,10 +11,10 @@ import java.util.Arrays;
 
 public class ServiceQuestionnaireImpl implements IServiceQuestion {
 
-    public /*!!!!!!!!A CHANGER!!!!!!!*/void chargerListeQuestion(String nomFichier) {
+    public /*!!!!!!!!A CHANGER en QuestionnaireDTO!!!!!!!*/void chargerListeQuestion(String nomFichier) {
         try {
 
-            CSVReader reader = new CSVReader(new FileReader("questionsQuizz_V1.1.csv"));
+            CSVReader reader = new CSVReader(new FileReader(nomFichier));
             String[] nextline;
             while ((nextline = reader.readNext()) != null) {
                 if (nextline != null) {

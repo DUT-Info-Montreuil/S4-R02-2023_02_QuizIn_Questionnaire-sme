@@ -18,6 +18,8 @@ public class QuestionnaireDTO {
         this.questions = questions;
     }
 
+    public void addQuestion(){}
+
     @Override
     public String toString() {
         return "QuestionnaireDTO{" +

@@ -22,6 +22,9 @@ public class testDesMethodes {
             System.out.println(e);
         }
         System.out.println("csv read complete");
+
+        //parcourir le taleau et pour chaque ligne créer une question et l'ajouter a questionnaireDTO
+
     }
 }
 
