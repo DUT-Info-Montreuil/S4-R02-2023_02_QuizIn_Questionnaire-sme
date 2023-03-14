@@ -8,7 +8,9 @@ import java.io.File;
 
 public class ServiceQuestionnaireImpl implements IServiceQuestion {
 
-    public QuestionnaireDTO chargerListeQuestion(File fichier){
+
+    @Override
+    public QuestionnaireDTO chargerListeQuestion(File fichier) {
         return null;
     }
 
@@ -18,15 +20,9 @@ public class ServiceQuestionnaireImpl implements IServiceQuestion {
     }
 
     @Override
-    public QuestionnaireDTO fournirUnQuestionnaires() {
-        return null;
-    }
-
-    @Override
     public void majStatQuestions(QuestionnaireDTO q) {
 
     }
-
 
     @Override
     public QuestionDTO fournirStatQuestions() {

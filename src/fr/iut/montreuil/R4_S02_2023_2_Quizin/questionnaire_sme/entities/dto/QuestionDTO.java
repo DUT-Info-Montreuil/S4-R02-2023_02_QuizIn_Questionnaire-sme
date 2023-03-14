@@ -25,6 +25,17 @@ public class QuestionDTO {
         Référence = référence;
     }
 
+    public QuestionDTO(int id,int numQuestionniare, String langue, String libelle, String reponse, int difficulte, String explication, String reference) {
+        this.idQuestionnaire = id;
+        this.num_questionnaire=numQuestionniare;
+        this.Langue = langue;
+        this.Libellé = libelle;
+        this.Réponse = reponse;
+        this.Difficulté = difficulte;
+        this.Explication = explication;
+        this.Référence = reference;
+    }
+
     public void setFQBO(FichierQuestionnaireBO FQBO) {
         this.FQBO = FQBO;
     }
