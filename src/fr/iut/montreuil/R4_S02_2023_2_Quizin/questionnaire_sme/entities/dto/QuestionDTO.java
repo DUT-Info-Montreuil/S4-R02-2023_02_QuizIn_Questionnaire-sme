@@ -1,11 +1,11 @@
 package fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.entities.dto;
 
-import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.entities.bo.FichierQuestionnaireBO;
+import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.entities.bo.QuestionnaireBO;
 
 public class QuestionDTO {
-    private FichierQuestionnaireBO FQBO;
+    private QuestionnaireBO FQBO;
     private int idQuestionnaire ;
-    private int num_questionnaire;
+    private int num_question;
     private String Langue;
     private String Libellé;
     private String Réponse;
@@ -13,21 +13,21 @@ public class QuestionDTO {
     private String Explication;
     private String Référence;
 
-    public QuestionDTO(FichierQuestionnaireBO FQBO, int idQuestionnaire, int num_questionnaire, String langue, String libellé, String réponse, int difficulté, String explication, String référence) {
-        this.FQBO = FQBO;
-        this.idQuestionnaire = idQuestionnaire;
-        this.num_questionnaire = num_questionnaire;
-        Langue = langue;
-        Libellé = libellé;
-        Réponse = réponse;
-        Difficulté = difficulté;
-        Explication = explication;
-        Référence = référence;
-    }
+//    public QuestionDTO(int idQuestionnaire, int num_question, String langue, String libellé, String réponse, int difficulté, String explication, String référence) {
+//        //this.FQBO = FQBO;
+//        this.idQuestionnaire = idQuestionnaire;
+//        this.num_question = num_question;
+//        Langue = langue;
+//        Libellé = libellé;
+//        Réponse = réponse;
+//        Difficulté = difficulté;
+//        Explication = explication;
+//        Référence = référence;
+//    }
 
     public QuestionDTO(int id,int numQuestionniare, String langue, String libelle, String reponse, int difficulte, String explication, String reference) {
         this.idQuestionnaire = id;
-        this.num_questionnaire=numQuestionniare;
+        this.num_question=numQuestionniare;
         this.Langue = langue;
         this.Libellé = libelle;
         this.Réponse = reponse;
@@ -36,11 +36,11 @@ public class QuestionDTO {
         this.Référence = reference;
     }
 
-    public void setFQBO(FichierQuestionnaireBO FQBO) {
+    public void setFQBO(QuestionnaireBO FQBO) {
         this.FQBO = FQBO;
     }
 
-    public QuestionDTO(FichierQuestionnaireBO FQBO) {
+    public QuestionDTO(QuestionnaireBO FQBO) {
         this.FQBO = FQBO;
     }
 
@@ -52,12 +52,12 @@ public class QuestionDTO {
         this.idQuestionnaire = idQuestionnaire;
     }
 
-    public int getNum_questionnaire() {
-        return num_questionnaire;
+    public int getNum_question() {
+        return num_question;
     }
 
-    public void setNum_questionnaire(int num_questionnaire) {
-        this.num_questionnaire = num_questionnaire;
+    public void setNum_question(int num_question) {
+        this.num_question = num_question;
     }
 
     public String getLangue() {
@@ -113,7 +113,7 @@ public class QuestionDTO {
         return "QuestionDTO{" +
                 "FQBO=" + FQBO +
                 ", idQuestionnaire=" + idQuestionnaire +
-                ", num_questionnaire=" + num_questionnaire +
+                ", num_questionnaire=" + num_question +
                 ", Langue='" + Langue + '\'' +
                 ", Libellé='" + Libellé + '\'' +
                 ", Réponse='" + Réponse + '\'' +
