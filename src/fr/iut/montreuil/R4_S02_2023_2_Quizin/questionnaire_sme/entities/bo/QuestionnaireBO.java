@@ -10,6 +10,7 @@ public class QuestionnaireBO {
     private ArrayList<QuestionDTO> questionnaire;
 
     public QuestionnaireBO() {
+
         this.questionnaire = new ArrayList<QuestionDTO>();
     }
 

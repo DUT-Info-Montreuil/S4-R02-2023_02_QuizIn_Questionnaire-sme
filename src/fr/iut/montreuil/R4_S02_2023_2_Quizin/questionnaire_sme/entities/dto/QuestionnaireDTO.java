@@ -15,6 +15,10 @@ public class QuestionnaireDTO {
         this.questions = questions;
     }
 
+    public QuestionnaireDTO() {
+
+    }
+
 
     public int getIdQuestionnaire() {
         return idQuestionnaire;
@@ -40,4 +44,7 @@ public class QuestionnaireDTO {
     }
 
 
+    public void addQuestion(QuestionDTO questionDTO) {
+        this.questions.add(questionDTO);
+    }
 }

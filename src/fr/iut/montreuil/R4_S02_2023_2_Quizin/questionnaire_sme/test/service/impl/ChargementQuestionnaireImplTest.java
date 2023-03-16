@@ -7,6 +7,7 @@ import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.Exception.Fichier
 import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.Exception.FichierVideExceptions;
 import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.entities.dto.QuestionDTO;
 import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.entities.dto.QuestionnaireDTO;
+import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.impl.ServiceQuestionnaireImpl;
 import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.modeles.IServiceQuestion;
 import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.test.service.Mock.ChargementQuestionnaireMockIncorrect;
 import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.test.service.Mock.ChargementQuestionnaireMockNonInvalide;
@@ -28,11 +29,9 @@ public class ChargementQuestionnaireImplTest {
         List<QuestionDTO> listQuestionsCorrect = new ArrayList<QuestionDTO>();
         listQuestionsCorrect.add(questionCorrect);
         QuestionnaireDTO leQuestionnaireCorrect = new QuestionnaireDTO((ArrayList<QuestionDTO>) listQuestionsCorrect);
-        List<QuestionnaireDTO> reponseCorrect = new ArrayList<QuestionnaireDTO>();
-        reponseCorrect.add(leQuestionnaireCorrect);
-        List<QuestionnaireDTO> bonnereponse = serviceQuestionnaireTest.chargerListeQuestion("chargementCorrect.csv");
-        Assertions.assertEquals(leQuestionnaireCorrect.getQuestions().get(0).getReponse(),bonnereponse.get(0).getQuestions().get(0).getReponse());
-        Assertions.assertEquals(leQuestionnaireCorrect.getQuestions().get(0).getLibelle(),bonnereponse.get(0).getQuestions().get(0).getLibelle());
+        QuestionnaireDTO bonnereponse = serviceQuestionnaireTest.chargerListeQuestion("OK.csv");
+        Assertions.assertEquals(leQuestionnaireCorrect.getQuestions().get(0).getReponse(),bonnereponse.getQuestions().get(0).getReponse());
+        Assertions.assertEquals(leQuestionnaireCorrect.getQuestions().get(0).getLibelle(),bonnereponse.getQuestions().get(0).getLibelle());
 
     }
 
@@ -42,7 +41,7 @@ public class ChargementQuestionnaireImplTest {
         // QuestionDTO questionIncorrectAttendu = new QuestionDTO("De quel petit objet se munit le golfeur pour surelever sa balle avant de la frapper ",null);
         //serviceQuestionnaireTest.chargerListeQuestionnaire("chargementIncorrect.csv");
         Assertions.assertThrows(FichierIncorrectExceptions.class, ()->
-                serviceQuestionnaireTest.chargerListeQuestion("chargementIncorrect.csv"),"Valeur incorrect ou manquante");
+                serviceQuestionnaireTest.chargerListeQuestion("faux.csv"),"Valeur incorrect ou manquante");
 
     }
 
@@ -50,15 +49,24 @@ public class ChargementQuestionnaireImplTest {
     public void chargementQuestionnaireVide() throws FichierIncorrectExceptions, FichierPasTrouveExceptions, FichierVideExceptions {
         serviceQuestionnaireTest = new ChargementQuestionnaireVide();
         Assertions.assertThrows(FichierVideExceptions.class, ()->
-                serviceQuestionnaireTest.chargerListeQuestion("chargementVide.csv"),"Nom du fichier incorrect ou inexistant");
+                serviceQuestionnaireTest.chargerListeQuestion("vide.csv"),"Nom du fichier incorrect ou inexistant");
     }
 
     @Test
     public void chargementQuestionnaireNomInvalide() throws FichierIncorrectExceptions, FichierPasTrouveExceptions, FichierVideExceptions {
         serviceQuestionnaireTest = new ChargementQuestionnaireMockNonInvalide();
         Assertions.assertThrows(FichierPasTrouveExceptions.class, ()->
-                serviceQuestionnaireTest.chargerListeQuestion("okok.csv"),"Nom du fichier incorrect ou inexistant");
+                serviceQuestionnaireTest.chargerListeQuestion("ok.csv"),"Nom du fichier incorrect ou inexistant");
     }
+/*
+    @Test
+    public void testchargeListeQuestionnaire() throws FichierIncorrectExceptions, FichierPasTrouveExceptions, FichierVideExceptions {
+        ServiceQuestionnaireImpl serviceQuestionnaire = new ServiceQuestionnaireImpl();
+        Assertions.assertEquals(leQuestionnaireCorrect.getQuestions().get(0).getReponse(),bonnereponse.get(0).getQuestions().get(0).getReponse());
+        Assertions.assertEquals(leQuestionnaireCorrect.getQuestions().get(0).getLibelle(),bonnereponse.get(0).getQuestions().get(0).getLibelle());
+
+    }
+*/
 }
 
 

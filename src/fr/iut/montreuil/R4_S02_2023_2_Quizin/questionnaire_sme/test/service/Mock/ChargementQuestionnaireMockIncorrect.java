@@ -14,7 +14,7 @@ public class ChargementQuestionnaireMockIncorrect implements IServiceQuestion {
 
 
     @Override
-    public List<QuestionnaireDTO> chargerListeQuestion(String fichier) throws FichierVideExceptions, FichierIncorrectExceptions, FichierPasTrouveExceptions {
+    public QuestionnaireDTO chargerListeQuestion(String fichier) throws FichierVideExceptions, FichierIncorrectExceptions, FichierPasTrouveExceptions {
         throw new FichierIncorrectExceptions();
 
     }
