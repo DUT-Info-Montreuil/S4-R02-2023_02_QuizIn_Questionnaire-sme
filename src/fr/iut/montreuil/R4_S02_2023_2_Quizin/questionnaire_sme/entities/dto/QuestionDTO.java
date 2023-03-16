@@ -36,6 +36,7 @@ public class QuestionDTO {
         this.Référence = reference;
     }
 
+
     public void setFQBO(QuestionnaireBO FQBO) {
         this.FQBO = FQBO;
     }

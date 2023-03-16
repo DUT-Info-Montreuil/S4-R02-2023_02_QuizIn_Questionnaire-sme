@@ -12,37 +12,44 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ChargementQuestionnaireImplTest {
+    private IServiceQuestionnaire serviceQuestionnaireTest;
     @Test
-    public List<QuestionnaireDTO> chargementQuestionnaireTestOk(){
-        IServiceQuestion serviceatester = new ChargementQuestionnaireMockOk();
-        QuestionDTO objetattendue = new QuestionDTO(1, 1,"FR", "De quel petit objet se munit le golfeur pour surélever sa balle avant de la frapper ?", "GG", 1, "yes", "ok");
-        ArrayList<QuestionDTO> question = new ArrayList<QuestionDTO>();
-        question.add(objetattendue);
-        QuestionnaireDTO QuestionnaireCorrect = new QuestionnaireDTO(question);
-        List<QuestionnaireDTO> reponse = new ArrayList<QuestionnaireDTO>();
-        reponse.add(QuestionnaireCorrect);
-        return reponse;
-    }
-    public List<QuestionnaireDTO> chargementQuestionnaireTestVide(){
-        IServiceQuestion serviceatester = new ChargementQuestionnaireMockOk();
-        QuestionDTO objetattendue = new QuestionDTO(null);
-        ArrayList<QuestionDTO> question = new ArrayList<QuestionDTO>();
-        question.add(objetattendue);
-        QuestionnaireDTO QuestionnaireIncorrect = new QuestionnaireDTO(question);
-        List<QuestionnaireDTO> reponse = new ArrayList<QuestionnaireDTO>();
-        reponse.add(QuestionnaireIncorrect);
-        return reponse;
+    public void chargementQuestionnaireCorrect() throws FichierPasTrouveExceptions, FichierVideExceptions, FichierIncorrectExceptions {
+        serviceQuestionnaireTest = new ServiceQuestionnaireMockCorrect();
+        QuestionDTO questionCorrect = new QuestionDTO("De quel petit objet se munit le golfeur pour surelever sa balle avant de la frapper ","Tee");
+        List<QuestionDTO> listQuestionsCorrect = new ArrayList<QuestionDTO>();
+        listQuestionsCorrect.add(questionCorrect);
+        QuestionnaireDTO leQuestionnaireCorrect = new QuestionnaireDTO(listQuestionsCorrect);
+        List<QuestionnaireDTO> reponseCorrect = new ArrayList<QuestionnaireDTO>();
+        reponseCorrect.add(leQuestionnaireCorrect);
+        List<QuestionnaireDTO> bonnereponse = serviceQuestionnaireTest.chargerListeQuestionnaire("chargementCorrect.csv");
+        Assertions.assertEquals(leQuestionnaireCorrect.getListeQuestions().get(0).getReponse(),bonnereponse.get(0).getListeQuestions().get(0).getReponse());
+        Assertions.assertEquals(leQuestionnaireCorrect.getListeQuestions().get(0).getLibelle(),bonnereponse.get(0).getListeQuestions().get(0).getLibelle());
+
     }
 
-    public List<QuestionnaireDTO> chargementQuestionnaireTestError(){
-        IServiceQuestion serviceatester = new ChargementQuestionnaireMockOk();
-        QuestionDTO objetattendue = new QuestionDTO(1,1,"fr","20","Tee",1,"Le joueur devant taper sa balle sur le départ peut la poser sur une cheville de bois ou de plastique appelée tee, qui ne peut pas être utilisée en dehors des départs. L'utilité d'un tee est de surélever la balle pour faciliter l'utilisation de clubs de golf spéciaux","https://fr.wikipedia.org/wiki/Mat%C3%A9riel_de_golf");
-        ArrayList<QuestionDTO> question = new ArrayList<QuestionDTO>();
-        question.add(objetattendue);
-        QuestionnaireDTO QuestionnaireError = new QuestionnaireDTO(question);
-        List<QuestionnaireDTO> reponse = new ArrayList<QuestionnaireDTO>();
-        reponse.add(QuestionnaireError);
-        return reponse;
+    @Test
+    public void chargementQuestionnaireIncorrect() throws FichierIncorrectExceptions, FichierPasTrouveExceptions, FichierVideExceptions {
+        serviceQuestionnaireTest = new ServiceQuestionnaireMockIncorrect();
+        // QuestionDTO questionIncorrectAttendu = new QuestionDTO("De quel petit objet se munit le golfeur pour surelever sa balle avant de la frapper ",null);
+        //serviceQuestionnaireTest.chargerListeQuestionnaire("chargementIncorrect.csv");
+        Assertions.assertThrows(FichierIncorrectExceptions.class, ()->
+                serviceQuestionnaireTest.chargerListeQuestionnaire("chargementIncorrect.csv"),"Valeur incorrect ou manquante");
+
+    }
+
+    @Test
+    public void chargementQuestionnaireVide() throws FichierIncorrectExceptions, FichierPasTrouveExceptions, FichierVideExceptions {
+        serviceQuestionnaireTest = new ServiceQuestionnaireMockVide();
+        Assertions.assertThrows(FichierVideExceptions.class, ()->
+                serviceQuestionnaireTest.chargerListeQuestionnaire("chargementVide.csv"),"Nom du fichier incorrect ou inexistant");
+    }
+
+    @Test
+    public void chargementQuestionnaireNomInvalide() throws FichierIncorrectExceptions, FichierPasTrouveExceptions, FichierVideExceptions {
+        serviceQuestionnaireTest = new ServiceQuestionnaireMockNomInvalide();
+        Assertions.assertThrows(FichierPasTrouveExceptions.class, ()->
+                serviceQuestionnaireTest.chargerListeQuestionnaire("okok.csv"),"Nom du fichier incorrect ou inexistant");
     }
 }
 

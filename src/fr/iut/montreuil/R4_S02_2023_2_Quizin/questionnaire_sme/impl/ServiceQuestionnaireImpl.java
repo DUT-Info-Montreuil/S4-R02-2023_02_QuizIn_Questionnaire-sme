@@ -7,6 +7,7 @@ import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.modeles.IServiceQ
 //import com.opencsv.CSVReader;
 import java.io.*;
 import java.util.Arrays;
+import java.util.List;
 
 public class ServiceQuestionnaireImpl implements IServiceQuestion {
 
@@ -35,7 +36,7 @@ public class ServiceQuestionnaireImpl implements IServiceQuestion {
 
 
     @Override
-    public QuestionnaireDTO chargerListeQuestion(File fichier) {
+    public List<QuestionnaireDTO> chargerListeQuestion(File fichier) {
         return null;
     }
 
