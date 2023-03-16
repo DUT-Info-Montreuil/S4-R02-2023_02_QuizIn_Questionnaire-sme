@@ -37,10 +37,7 @@ public class ServiceQuestionnaireImpl implements IServiceQuestion {
         return null;
     }
 
-    @Override
-    public QuestionnaireDTO fournirUnQuestionnaires() {
-        return null;
-    }
+
 
     @Override
     public void majStatQuestions(QuestionnaireDTO q) {
