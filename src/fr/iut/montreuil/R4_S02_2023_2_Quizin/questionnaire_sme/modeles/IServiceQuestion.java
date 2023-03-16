@@ -12,7 +12,10 @@ import java.util.List;
 public interface IServiceQuestion {
 
 
-    public List<QuestionnaireDTO> chargerListeQuestion(File fichier) throws FichierVideExceptions, FichierIncorrectExceptions, FichierPasTrouveExceptions;
+    public List<QuestionnaireDTO> chargerListeQuestion(String fichier) throws FichierVideExceptions, FichierIncorrectExceptions, FichierPasTrouveExceptions;
+
+
+
     public QuestionnaireDTO fournirListeQuestionnaires();
     public void majStatQuestions(QuestionnaireDTO q );
     public QuestionDTO fournirStatQuestions();

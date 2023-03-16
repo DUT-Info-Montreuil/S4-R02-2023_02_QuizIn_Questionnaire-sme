@@ -17,4 +17,11 @@ public class QuestionnaireBO {
         this.questionnaire.add(q);
     }
 
+    public ArrayList<QuestionDTO> getQuestionnaire() {
+        return questionnaire;
+    }
+
+    public void setQuestionnaire(ArrayList<QuestionDTO> questionnaire) {
+        this.questionnaire = questionnaire;
+    }
 }

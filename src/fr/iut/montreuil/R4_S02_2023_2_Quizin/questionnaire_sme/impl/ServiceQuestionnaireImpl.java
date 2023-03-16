@@ -6,12 +6,11 @@ import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.entities.dto.Ques
 import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.modeles.IServiceQuestion;
 //import com.opencsv.CSVReader;
 import java.io.*;
-import java.util.Arrays;
 import java.util.List;
 
 public class ServiceQuestionnaireImpl implements IServiceQuestion {
 
-    public /*!!!!!!!!A CHANGER en QuestionnaireDTO!!!!!!!*/void chargerListeQuestion(String nomFichier) {
+    public /*!!!!!!!!A CHANGER en QuestionnaireDTO!!!!!!!*/List<QuestionnaireDTO> chargerListeQuestion(String nomFichier) {
         String pathfile = "src/fr/iut/montreuil/R4_S02_2023_2_Quizin/questionnaire_sme/ressources/questionsQuizz_V1.1.csv";
         String line = " ";
         QuestionnaireBO questionnaire = new QuestionnaireBO();
@@ -31,14 +30,11 @@ public class ServiceQuestionnaireImpl implements IServiceQuestion {
         } catch (IOException a) {
             a.printStackTrace();
         }
-    }
-
-
-
-    @Override
-    public List<QuestionnaireDTO> chargerListeQuestion(File fichier) {
         return null;
     }
+
+
+
 
     @Override
     public QuestionnaireDTO fournirListeQuestionnaires() {

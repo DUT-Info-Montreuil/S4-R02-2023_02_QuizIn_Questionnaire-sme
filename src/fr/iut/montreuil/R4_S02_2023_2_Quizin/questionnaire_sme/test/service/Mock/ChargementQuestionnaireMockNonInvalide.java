@@ -7,17 +7,12 @@ import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.entities.dto.Ques
 import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.entities.dto.QuestionnaireDTO;
 import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.modeles.IServiceQuestion;
 
-import java.io.File;
 import java.util.List;
 
-public class ChargementQuestionnaireVide implements IServiceQuestion {
-
-
-
-
+public class ChargementQuestionnaireMockNonInvalide implements IServiceQuestion {
     @Override
     public List<QuestionnaireDTO> chargerListeQuestion(String fichier) throws FichierVideExceptions, FichierIncorrectExceptions, FichierPasTrouveExceptions {
-        throw new FichierVideExceptions();
+        throw  new FichierPasTrouveExceptions();
     }
 
     @Override

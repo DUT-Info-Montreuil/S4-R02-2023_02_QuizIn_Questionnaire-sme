@@ -1,5 +1,7 @@
 package fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.entities.dto;
 import java.util.ArrayList;
+import java.util.List;
+
 public class QuestionnaireDTO {
     private int idQuestionnaire;
     private ArrayList<QuestionDTO> questions;
@@ -10,23 +12,25 @@ public class QuestionnaireDTO {
     }
 
     public QuestionnaireDTO( ArrayList<QuestionDTO> questions) {
-
         this.questions = questions;
     }
 
 
-
-    private QuestionDTO question;
-
-    public QuestionDTO getQuestion() {
-        return question;
+    public int getIdQuestionnaire() {
+        return idQuestionnaire;
     }
 
-    public void setQuestion(QuestionDTO question) {
-        this.question = question;
+    public void setIdQuestionnaire(int idQuestionnaire) {
+        this.idQuestionnaire = idQuestionnaire;
     }
 
-    public void addQuestion(){}
+    public ArrayList<QuestionDTO> getQuestions() {
+        return questions;
+    }
+
+    public void setQuestions(ArrayList<QuestionDTO> questions) {
+        this.questions = questions;
+    }
 
     @Override
     public String toString() {
@@ -34,4 +38,6 @@ public class QuestionnaireDTO {
                 "questions=" + questions +
                 '}';
     }
+
+
 }

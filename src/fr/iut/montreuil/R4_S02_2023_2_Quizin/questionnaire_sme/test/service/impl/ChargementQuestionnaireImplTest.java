@@ -9,6 +9,7 @@ import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.entities.dto.Ques
 import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.entities.dto.QuestionnaireDTO;
 import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.modeles.IServiceQuestion;
 import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.test.service.Mock.ChargementQuestionnaireMockIncorrect;
+import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.test.service.Mock.ChargementQuestionnaireMockNonInvalide;
 import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.test.service.Mock.ChargementQuestionnaireMockOk;
 import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.test.service.Mock.ChargementQuestionnaireVide;
 import org.junit.jupiter.api.Assertions;
@@ -54,7 +55,7 @@ public class ChargementQuestionnaireImplTest {
 
     @Test
     public void chargementQuestionnaireNomInvalide() throws FichierIncorrectExceptions, FichierPasTrouveExceptions, FichierVideExceptions {
-        serviceQuestionnaireTest = new ChargementQuestionnaireMockIncorrect();
+        serviceQuestionnaireTest = new ChargementQuestionnaireMockNonInvalide();
         Assertions.assertThrows(FichierPasTrouveExceptions.class, ()->
                 serviceQuestionnaireTest.chargerListeQuestion("okok.csv"),"Nom du fichier incorrect ou inexistant");
     }

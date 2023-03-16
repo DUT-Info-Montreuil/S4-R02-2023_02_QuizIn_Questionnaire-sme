@@ -6,12 +6,12 @@ public class QuestionDTO {
     private QuestionnaireBO FQBO;
     private int idQuestionnaire ;
     private int num_question;
-    private String Langue;
-    private String Libellé;
-    private String Réponse;
-    private int Difficulté;
-    private String Explication;
-    private String Référence;
+    private String langue;
+    private String libelle;
+    private String reponse;
+    private int difficulté;
+    private String explication;
+    private String reference;
 
 //    public QuestionDTO(int idQuestionnaire, int num_question, String langue, String libellé, String réponse, int difficulté, String explication, String référence) {
 //        //this.FQBO = FQBO;
@@ -28,20 +28,20 @@ public class QuestionDTO {
     public QuestionDTO(int id,int numQuestionniare, String langue, String libelle, String reponse, int difficulte, String explication, String reference) {
         this.idQuestionnaire = id;
         this.num_question=numQuestionniare;
-        this.Langue = langue;
-        this.Libellé = libelle;
-        this.Réponse = reponse;
-        this.Difficulté = difficulte;
-        this.Explication = explication;
-        this.Référence = reference;
+        this.langue = langue;
+        this.libelle = libelle;
+        this.reponse = reponse;
+        this.difficulté = difficulte;
+        this.explication = explication;
+        this.reference = reference;
     }
 
+
+    public QuestionnaireBO getFQBO() {
+        return FQBO;
+    }
 
     public void setFQBO(QuestionnaireBO FQBO) {
-        this.FQBO = FQBO;
-    }
-
-    public QuestionDTO(QuestionnaireBO FQBO) {
         this.FQBO = FQBO;
     }
 
@@ -62,51 +62,51 @@ public class QuestionDTO {
     }
 
     public String getLangue() {
-        return Langue;
+        return langue;
     }
 
     public void setLangue(String langue) {
-        Langue = langue;
+        this.langue = langue;
     }
 
-    public String getLibellé() {
-        return Libellé;
+    public String getLibelle() {
+        return libelle;
     }
 
-    public void setLibellé(String libellé) {
-        Libellé = libellé;
+    public void setLibelle(String libelle) {
+        this.libelle = libelle;
     }
 
-    public String getRéponse() {
-        return Réponse;
+    public String getReponse() {
+        return reponse;
     }
 
-    public void setRéponse(String réponse) {
-        Réponse = réponse;
+    public void setReponse(String reponse) {
+        this.reponse = reponse;
     }
 
     public int getDifficulté() {
-        return Difficulté;
+        return difficulté;
     }
 
     public void setDifficulté(int difficulté) {
-        Difficulté = difficulté;
+        this.difficulté = difficulté;
     }
 
     public String getExplication() {
-        return Explication;
+        return explication;
     }
 
     public void setExplication(String explication) {
-        Explication = explication;
+        this.explication = explication;
     }
 
-    public String getRéférence() {
-        return Référence;
+    public String getReference() {
+        return reference;
     }
 
-    public void setRéférence(String référence) {
-        Référence = référence;
+    public void setReference(String reference) {
+        this.reference = reference;
     }
 
     @Override
@@ -115,12 +115,12 @@ public class QuestionDTO {
                 "FQBO=" + FQBO +
                 ", idQuestionnaire=" + idQuestionnaire +
                 ", num_questionnaire=" + num_question +
-                ", Langue='" + Langue + '\'' +
-                ", Libellé='" + Libellé + '\'' +
-                ", Réponse='" + Réponse + '\'' +
-                ", Difficulté=" + Difficulté +
-                ", Explication='" + Explication + '\'' +
-                ", Référence='" + Référence + '\'' +
+                ", Langue='" + langue + '\'' +
+                ", Libellé='" + libelle + '\'' +
+                ", Réponse='" + reponse + '\'' +
+                ", Difficulté=" + difficulté +
+                ", Explication='" + explication + '\'' +
+                ", Référence='" + reference + '\'' +
                 '}';
     }
 }
