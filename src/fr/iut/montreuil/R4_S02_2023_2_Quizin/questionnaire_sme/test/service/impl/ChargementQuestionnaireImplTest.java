@@ -62,8 +62,7 @@ public class ChargementQuestionnaireImplTest {
     @Test
     public void testchargeListeQuestionnaire() throws FichierIncorrectExceptions, FichierPasTrouveExceptions, FichierVideExceptions {
         ServiceQuestionnaireImpl serviceQuestionnaire = new ServiceQuestionnaireImpl();
-        Assertions.assertEquals(leQuestionnaireCorrect.getQuestions().get(0).getReponse(),bonnereponse.get(0).getQuestions().get(0).getReponse());
-        Assertions.assertEquals(leQuestionnaireCorrect.getQuestions().get(0).getLibelle(),bonnereponse.get(0).getQuestions().get(0).getLibelle());
+        serviceQuestionnaire.chargerListeQuestion("questionsQuizz_V1.1.csv");
 
     }
 */

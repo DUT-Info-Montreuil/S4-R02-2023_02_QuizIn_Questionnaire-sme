@@ -1,10 +1,9 @@
 package fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.test.service.Mock;
 
-import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.Exception.FichierIncorrectExceptions;
-import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.Exception.FichierPasTrouveExceptions;
-import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.Exception.FichierVideExceptions;
+import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.Exception.*;
 import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.entities.dto.QuestionDTO;
 import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.entities.dto.QuestionnaireDTO;
+import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.entities.dto.StatsDTO;
 import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.modeles.IServiceQuestion;
 
 import java.io.File;
@@ -20,7 +19,6 @@ public class ChargementQuestionnaireMockIncorrect implements IServiceQuestion {
     }
 
 
-
     @Override
     public QuestionnaireDTO fournirListeQuestionnaires() {
         return null;
@@ -31,8 +29,7 @@ public class ChargementQuestionnaireMockIncorrect implements IServiceQuestion {
 
     }
 
-    @Override
-    public QuestionDTO fournirStatQuestions() {
+    public StatsDTO fournirStatsQuestions(QuestionnaireDTO questionnaire) throws IdQuestionnaireIncorrectExeptions, StatsQuestionsIncorrectExeptions {
         return null;
     }
 }

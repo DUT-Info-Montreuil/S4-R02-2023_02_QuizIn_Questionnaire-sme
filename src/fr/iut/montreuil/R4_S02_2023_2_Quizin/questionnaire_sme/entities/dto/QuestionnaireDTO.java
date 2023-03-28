@@ -20,6 +20,7 @@ public class QuestionnaireDTO {
     }
 
 
+
     public int getIdQuestionnaire() {
         return idQuestionnaire;
     }
