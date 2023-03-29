@@ -30,6 +30,14 @@ public class QuestionDTO {
     }
 
 
+    public StatsQuestionDTO getStatsQuestion() {
+        return statsQuestion;
+    }
+
+    public void setStatsQuestion(StatsQuestionDTO statsQuestion) {
+        this.statsQuestion = statsQuestion;
+    }
+
     public int getIdQuestionnaire() {
         return idQuestionnaire;
     }

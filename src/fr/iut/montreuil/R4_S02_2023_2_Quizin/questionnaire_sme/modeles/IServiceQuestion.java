@@ -13,7 +13,7 @@ public interface IServiceQuestion {
 
     public QuestionnaireDTO chargerListeQuestion(String fichier) throws FichierVideExceptions, FichierIncorrectExceptions, FichierPasTrouveExceptions;
     public QuestionnaireDTO fournirListeQuestionnaires();
-    public StatsDTO fournirStatsQuestions(QuestionnaireDTO questionnaire) throws IdQuestionnaireIncorrectExeptions, StatsQuestionsIncorrectExeptions;
+    public StatsDTO fournirStatsQuestions(QuestionnaireDTO questionnaire) throws IdQuestionnaireIncorrectExeptions, StatsQuestionsIncorrectExeptions, NbDeFoisJoueQuestionnaireIncorrectExeptions;
 
     public  void majStatQuestions(QuestionnaireDTO q);
 
