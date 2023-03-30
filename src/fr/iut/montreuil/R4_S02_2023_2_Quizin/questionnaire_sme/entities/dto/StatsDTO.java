@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 public class StatsDTO {
     private ArrayList<QuestionDTO> statQuestDTO = new ArrayList<>();
-    private int nbjouerQuest;
-    private int idQuestion;
+    private int nbjouerQuestionniare;
+    private int idQuestionnaire;
 
     public StatsDTO(ArrayList<QuestionDTO> statQuestDTO, int nbjouerQuest, int idQuestion) {
         this.statQuestDTO = statQuestDTO;
-        this.nbjouerQuest = nbjouerQuest;
-        this.idQuestion = idQuestion;
+        this.nbjouerQuestionniare = nbjouerQuest;
+        this.idQuestionnaire = idQuestion;
     }
 
     public ArrayList<QuestionDTO> getStatQuestDTO() {
@@ -21,19 +21,19 @@ public class StatsDTO {
         this.statQuestDTO = statQuestDTO;
     }
 
-    public int getNbjouerQuest() {
-        return nbjouerQuest;
+    public int getNbjouerQuestionniare() {
+        return nbjouerQuestionniare;
     }
 
-    public void setNbjouerQuest(int nbjouerQuest) {
-        this.nbjouerQuest = nbjouerQuest;
+    public void setNbjouerQuestionniare(int nbjouerQuestionniare) {
+        this.nbjouerQuestionniare = nbjouerQuestionniare;
     }
 
-    public int getIdQuestion() {
-        return idQuestion;
+    public int getIdQuestionnaire() {
+        return idQuestionnaire;
     }
 
-    public void setIdQuestion(int idQuestion) {
-        this.idQuestion = idQuestion;
+    public void setIdQuestionnaire(int idQuestionnaire) {
+        this.idQuestionnaire = idQuestionnaire;
     }
 }
