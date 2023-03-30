@@ -8,12 +8,16 @@ import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.entities.dto.Stat
 import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.modeles.IServiceQuestion;
 import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.test.service.Mock.ServiceStatsQuestionnaireMockCorrect;
 import fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.test.service.Mock.ServiceStatsQuestionnaireMockIdQuestionnaireInccorect;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
 public class StatistiquesQuestionnaireImplTest {
+
+
+
 
     @Test
     public void statsQuestionnaireCorrect() throws StatsQuestionsIncorrectExeptions,  IdQuestionnaireIncorrectExeptions {
@@ -56,6 +60,40 @@ public class StatistiquesQuestionnaireImplTest {
 
             Assertions.assertThrows(IdQuestionnaireIncorrectExeptions.class, () -> ISQ2.fournirStatsQuestions(questionnaireDTO));
         }
-    }
+
+        @Test
+        public void statsQuestionsCorrect() {
+            IServiceQuestion ISQ = new ServiceStatsQuestionnaireMockCorrect();
+
+            //creation d'un QuestionnaireDTO
+            ArrayList<QuestionDTO> listeQuestions = new ArrayList<QuestionDTO>();
+
+            QuestionDTO questionDTOv1 = new QuestionDTO(1,"fr","De quel petit objet se munit le golfeur pour surélever sa balle avant de la frapper ?","Tee",1,"Le joueur peut poser sa balle sur une cheville de bois ou de plastique qui ne peut pas être utilisée en dehors des départs.","https://fr.wikipedia.org/wiki/Matériel_de_golf", new StatsQuestionDTO());
+            questionDTOv1.getStatsQuestion().setNbJouer(2);
+            questionDTOv1.getStatsQuestion().setNbOK(0);
+
+            QuestionDTO questionDTOv2 = new QuestionDTO(2,"fr","De quel petit objet se munit le golfeur pour surélever sa balle avant de la frapper ?","Tee",1,"","", new StatsQuestionDTO());
+            questionDTOv1.getStatsQuestion().setNbJouer(3);
+            questionDTOv1.getStatsQuestion().setNbOK(3);
+
+            QuestionDTO questionDTOv3 = new QuestionDTO(3,"fr","De quel petit objet se munit le golfeur pour surélever sa balle avant de la frapper ?","Tee",1,"","",new StatsQuestionDTO());
+            questionDTOv1.getStatsQuestion().setNbJouer(5);
+            questionDTOv1.getStatsQuestion().setNbOK(5);
+
+            listeQuestions.add(questionDTOv1);
+            listeQuestions.add(questionDTOv2);
+            listeQuestions.add(questionDTOv3);
+
+            StatsDTO testBilanStat(listeQuestions, 10, 1);
+
+
+
+//            Assertions.assertEquals();
+
+        }
+
+}
+
+
 
 
