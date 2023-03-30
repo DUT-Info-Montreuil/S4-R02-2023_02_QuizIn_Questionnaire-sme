@@ -17,7 +17,7 @@ public class ServiceStatsQuestionnaireMockIdQuestionnaireInccorect implements IS
     }
 
     @Override
-        public StatsDTO fournirStatsQuestions(QuestionnaireDTO questionnaire) throws IdQuestionnaireIncorrectExeptions, NbDeFoisJoueQuestionnaireIncorrectExeptions, StatsQuestionsIncorrectExeptions {
+        public StatsDTO fournirStatsQuestions(QuestionnaireDTO questionnaire) throws IdQuestionnaireIncorrectExeptions, StatsQuestionsIncorrectExeptions {
             throw new IdQuestionnaireIncorrectExeptions();
         }
 

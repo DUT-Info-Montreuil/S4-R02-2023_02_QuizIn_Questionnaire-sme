@@ -8,10 +8,9 @@ public class StatsQuestionDTO extends QuestionDTO  {
     private int nbJouer;
     private int nbOK;
 
-    public StatsQuestionDTO(int nbJouer, int nbOK) {
-        this.nbJouer = nbJouer;
-        this.nbOK = nbOK;
-
+    public StatsQuestionDTO() {
+     this.nbJouer=0;
+     this.nbOK=0;
     }
 
     public int getNbJouer() {

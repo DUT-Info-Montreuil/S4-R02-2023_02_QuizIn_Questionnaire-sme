@@ -27,7 +27,7 @@ public class ServiceQuestionnaireImpl implements IServiceQuestion {
             while ((line = br.readLine()) != null) {
                 //System.out.println(line);
                 elements = line.split(";");
-                questionnaire.addQuestion(new QuestionDTO(1, Integer.parseInt(elements[1]), elements[2], elements[3], elements[4], Integer.parseInt(elements[5]), elements[6], elements[7],new StatsQuestionDTO(0,0)));
+                questionnaire.addQuestion(new QuestionDTO( Integer.parseInt(elements[1]), elements[2], elements[3], elements[4], Integer.parseInt(elements[5]), elements[6], elements[7],new StatsQuestionDTO()));
             }
 
         } catch (FileNotFoundException e) {
@@ -43,7 +43,7 @@ public class ServiceQuestionnaireImpl implements IServiceQuestion {
     }
 
     public StatsDTO fournirStatsQuestions(QuestionnaireDTO questionnaire) throws IdQuestionnaireIncorrectExeptions, StatsQuestionsIncorrectExeptions {
-            int nbQuestionsJouees = 0;
+
             ArrayList<QuestionDTO> statsQuestions = new ArrayList<>();
 
             // Vérifier si l'identifiant du questionnaire est correct
@@ -57,16 +57,17 @@ public class ServiceQuestionnaireImpl implements IServiceQuestion {
                 if (question.getNum_question() <= 0) {
                     throw new StatsQuestionsIncorrectExeptions();
                 }
+                question.getStatsQuestion().setNbJouer(1);
 
                 // Si la question a été jouée au moins une fois, ajouter ses statistiques
                 if (question.getNbJouer() > 0) {
                     statsQuestions.add(question);
-                    nbQuestionsJouees++;
+
                 }
             }
 
             // Créer un nouvel objet StatsDTO avec les statistiques collectées
-            StatsDTO stats = new StatsDTO(statsQuestions, nbQuestionsJouees, questionnaire.getIdQuestionnaire());
+            StatsDTO stats = new StatsDTO(statsQuestions, questionnaire.getNbJouerQuestionnaire(), questionnaire.getIdQuestionnaire());
             return stats;
         }
 

@@ -2,7 +2,7 @@ package fr.iut.montreuil.R4_S02_2023_2_Quizin.questionnaire_sme.entities.dto;
 
 public class QuestionDTO {
 
-    private int idQuestionnaire ;
+
     private int num_question;
     private String langue;
     private String libelle;
@@ -12,8 +12,8 @@ public class QuestionDTO {
     private String reference;
     private StatsQuestionDTO statsQuestion;
 
-    public QuestionDTO(int idQuestionnaire, int num_question, String langue, String libelle, String reponse, int difficulte, String explication, String reference, StatsQuestionDTO statsQuestion) {
-        this.idQuestionnaire = idQuestionnaire;
+    public QuestionDTO (int num_question, String langue, String libelle, String reponse, int difficulte, String explication, String reference, StatsQuestionDTO statsQuestion) {
+
         this.num_question = num_question;
         this.langue = langue;
         this.libelle = libelle;
@@ -38,13 +38,6 @@ public class QuestionDTO {
         this.statsQuestion = statsQuestion;
     }
 
-    public int getIdQuestionnaire() {
-        return idQuestionnaire;
-    }
-
-    public void setIdQuestionnaire(int idQuestionnaire) {
-        this.idQuestionnaire = idQuestionnaire;
-    }
 
     public int getNum_question() {
         return num_question;
@@ -108,7 +101,6 @@ public class QuestionDTO {
     @Override
     public String toString() {
         return "QuestionDTO{" +
-                ", idQuestionnaire=" + idQuestionnaire +
                 ", num_questionnaire=" + num_question +
                 ", Langue='" + langue + '\'' +
                 ", Libellé='" + libelle + '\'' +

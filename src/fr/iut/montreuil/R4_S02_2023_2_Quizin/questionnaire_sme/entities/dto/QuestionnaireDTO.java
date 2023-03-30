@@ -7,10 +7,12 @@ import java.util.List;
 public class QuestionnaireDTO {
     private int idQuestionnaire;
     private ArrayList<QuestionDTO> questions;
+    private int nbJouerQuestionnaire ;
 
     public QuestionnaireDTO(int idQuestionnaire, ArrayList<QuestionDTO> questions) {
         this.idQuestionnaire = idQuestionnaire;
         this.questions = questions;
+        this.nbJouerQuestionnaire=0;
     }
 
     public QuestionnaireDTO( ArrayList<QuestionDTO> questions) {
@@ -22,6 +24,13 @@ public class QuestionnaireDTO {
     }
 
 
+    public int getNbJouerQuestionnaire() {
+        return nbJouerQuestionnaire;
+    }
+
+    public void setNbJouerQuestionnaire(int nbJouerQuestionnaire) {
+        this.nbJouerQuestionnaire = nbJouerQuestionnaire;
+    }
 
     public int getIdQuestionnaire() {
         return idQuestionnaire;

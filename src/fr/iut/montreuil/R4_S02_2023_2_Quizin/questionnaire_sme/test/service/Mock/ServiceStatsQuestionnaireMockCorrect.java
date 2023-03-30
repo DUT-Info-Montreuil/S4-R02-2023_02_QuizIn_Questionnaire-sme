@@ -22,11 +22,11 @@ public class ServiceStatsQuestionnaireMockCorrect implements IServiceQuestion {
     }
 
     @Override
-        public StatsDTO fournirStatsQuestions(QuestionnaireDTO questionnaire) throws IdQuestionnaireIncorrectExeptions, NbDeFoisJoueQuestionnaireIncorrectExeptions, StatsQuestionsIncorrectExeptions {
+        public StatsDTO fournirStatsQuestions(QuestionnaireDTO questionnaire) throws IdQuestionnaireIncorrectExeptions,  StatsQuestionsIncorrectExeptions {
             ArrayList<QuestionDTO> statsQuestions = new ArrayList<QuestionDTO>();
-            StatsQuestionDTO statsQuestionsDTO = new StatsQuestionDTO(5,2);
+            StatsQuestionDTO statsQuestionsDTO = new StatsQuestionDTO();
             statsQuestions.add(statsQuestionsDTO);
-            statsQuestions.add(new StatsQuestionDTO(5,2));
+            statsQuestions.add(new StatsQuestionDTO());
             return new StatsDTO(statsQuestions,1, 5);
         }
 
